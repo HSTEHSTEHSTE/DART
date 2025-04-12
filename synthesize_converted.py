@@ -181,7 +181,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    listening_test_path="./output/result/L2ARCTIC/listening_test"
+    listening_test_path="/home/hltcoe/xli/ARTS/accented_baselines/DART/data/out_wavs"
     # args.dataset='L2ARCTIC'
     # args.pitch_control=1.0
     # args.energy_control=1.0

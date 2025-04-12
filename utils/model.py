@@ -4,7 +4,7 @@ import json
 import torch
 import numpy as np
 
-import hifigan
+# import hifigan
 from model import CompTransTTS, ScheduledOptim, ReduceLRPlateau
 
 def freeze_backbone(trainable_parameters_list,model):

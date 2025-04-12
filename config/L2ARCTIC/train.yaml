@@ -4,11 +4,11 @@ dist_config:
   dist_url: "tcp://localhost:54321"
   world_size: 1
 path:
-  ckpt_path: "./output/ckpt/L2ARCTIC"
-  log_path: "./output/log/L2ARCTIC"
-  result_path: "./output/result/L2ARCTIC"
-  array_path: "./output/arrays/L2ARCTIC"
-  plot_path: "./output/plots/L2ARCTIC"
+  ckpt_path: "exp/ckpt/l2arctic"
+  log_path: "exp/log/l2arctic"
+  result_path: "exp/result/l2arctic"
+  array_path: "exp/arrays/l2arctic"
+  plot_path: "exp/plots/l2arctic"
 optimizer:
   batch_size: 64
   betas: [0.9, 0.98]

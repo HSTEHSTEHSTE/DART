@@ -14,7 +14,7 @@ from torch.cuda import amp
 
 from tqdm import tqdm
 
-from utils.model import get_model, get_vocoder, get_param_num
+from utils.model import get_model, get_param_num
 from utils.tools import get_configs_of, to_device, log, synth_one_sample
 from model import CompTransTTSLoss
 from dataset import Dataset
@@ -59,8 +59,8 @@ def train(rank, args, configs, batch_size, num_gpus):
     scaler = amp.GradScaler(enabled=args.use_amp)
     Loss = CompTransTTSLoss(preprocess_config, model_config, train_config).to(device)
 
-    # Load vocoder
-    vocoder = get_vocoder(model_config, device)
+    # # Load vocoder
+    # vocoder = get_vocoder(model_config, device)
 
     # Training
     step = args.restore_step + 1
@@ -143,13 +143,13 @@ def train(rank, args, configs, batch_size, num_gpus):
                         log(train_logger, step, losses=losses, lr=lr)                            
 
                     if step % synth_step == 0:
-                        figs, fig_attn, wav_reconstruction, wav_prediction, tag = synth_one_sample(
-                            batch,
-                            output,
-                            vocoder,
-                            model_config,
-                            preprocess_config,
-                        )
+                        # figs, fig_attn, wav_reconstruction, wav_prediction, tag = synth_one_sample(
+                        #     batch,
+                        #     output,
+                        #     vocoder,
+                        #     model_config,
+                        #     preprocess_config,
+                        # )
                         if fig_attn is not None:
                             log(
                                 train_logger,
@@ -183,7 +183,7 @@ def train(rank, args, configs, batch_size, num_gpus):
 
                     if step % val_step == 0:
                         model.eval()
-                        message = evaluate(device, model, step, configs, val_logger, vocoder, losses)
+                        # message = evaluate(device, model, step, configs, val_logger, vocoder, losses)
                         with open(os.path.join(val_log_path, "log.txt"), "a") as f:
                             f.write(message + "\n")
                         outer_bar.write(message)

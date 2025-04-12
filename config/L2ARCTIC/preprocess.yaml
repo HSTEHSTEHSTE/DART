@@ -2,15 +2,15 @@ dataset: "L2ARCTIC"
 accents: ["Arabic", "Chinese", "Hindi", "Korean", "Spanish", "Vietnamese"]
 
 path:
-  corpus_path: "/data/dataset/L2ARCTIC"
-  tg_path: "./preprocessed_data/L2ARCTIC"
+  corpus_path: "corpus/l2arctic"
+  tg_path: "data/preprocessed_data/l2arctic"
   wav_tag: "eval"
   wav_dir: "wav"
   txt_dir: "transcript"
   tg_dir: "textgrid"
   lexicon_path: "lexicon/librispeech-lexicon.txt"
-  raw_path: "/data/dataset/L2ARCTIC-16k/raw_data"
-  preprocessed_path: "/data/dataset/L2ARCTIC-16k/preprocessed_data"
+  raw_path: "data/dataset/L2ARCTIC-16k/raw_data"
+  preprocessed_path: "data/preprocessed_data"
 
 preprocessing:
   speaker_embedder: "none" # support 'none', 'DeepSpeaker'
